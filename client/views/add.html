@@ -1,0 +1,36 @@
+<h2>ADD STORE</h2>
+<div ng-controller='addController'>
+<form class="card" name='addForm' ng-submit="add()">
+  <label for="name">Name</label>
+  <input type="text" name="name" ng-model="addForm.name">
+  <label for="description">Description</label>
+  <textarea name="description" ng-model="addForm.description"></textarea>
+  <!-- <label for="photo">Image</label>
+  <input type="file" name="photo" accept="image/gif, image/png, image/jpeg"> -->
+  <label for="address">Address</label>
+  <input type="text" id="address" name="address" required="required" placeholder="Enter a location"  ng-model="addForm.address">
+  <label for="lng">Address lng</label>
+  <input type="text" id="lng" name="longitude" required="required" ng-model="addForm.lng">
+  <label for="lat">Address lat</label>
+  <input type="text" id="lat" name="latitude" required="required" ng-model="addForm.lat">
+  <ul class="tags">
+    <div class="tag tag__choice">
+      <input type="checkbox" id="wifi" value="wifi" name="tags">
+      <label for="wifi">wifi</label></div>
+    <div class="tag tag__choice">
+      <input type="checkbox" id="Open Late" value="Open Late" name="tags">
+      <label for="Open Late">Open Late</label>
+    </div>
+    <div class="tag tag__choice"><input type="checkbox" id="Family Friendly" value="Family Friendly" name="tags">
+      <label for="Family Friendly">Family Friendly</label>
+    </div>
+    <div class="tag tag__choice"><input type="checkbox" id="Vegatarian" value="Vegatarian" name="tags">
+      <label for="Vegatarian">Vegatarian</label>
+    </div>
+    <div class="tag tag__choice"><input type="checkbox" id="Licenced" value="Licenced" name="tags">
+      <label for="Licenced">Licenced</label>
+    </div>
+  </ul>
+  <input class="button" type="submit" value="save">
+</form>
+</div>
