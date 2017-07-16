@@ -1,7 +1,12 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 before_script:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
+deploy:
+  app: findplaceonline
+  provider: heroku
+  api_key:
+    secure: eKi9MIOaAyINH1xpCF3qDPtKfxJpngpKBD+mZou9N6e2FffV5fbbFFry+qov92XAV8QutMvlsANLAOBimt/b84N0NZxMhTIyKK5ESYMsRryuUAV9Lchc3bwU97CNRhF0kaWgN6iXRVli8RfkHxWOrtL2tg7Xuj3vQhEC0cY1SirYKY0D8U5IIgZoicCBCMIk7gFXwMWN6a7GhZOjfevVlwLJN4q0VsXJsY1GdtdBZHcnbmbl8rVQdJ8VwuR20A6Jh60OdywkBCLVoagPC7rM+F/x1hAbnGHBK6IK19rtv9W6rKVAhNM35K1o545DAoSN3XYyrLqeIKMr94MePmHLNerejrgr1A1b2gKLLqSXk5AhaxMcXiV4PfH1jMk4hjWz2JUfRp1Xdh5x6Mdk3865LPpCUf/cjv15K7qxJTxJvOCvl2qmvgwukjKLVmPhhY3Z6fPrFgzYPZRGyhcrsPkoptvu9duxmTfFBvmcTJk7X8KzBPt3BwEZ1Rv1xdHrwnDCXMfjlD1KYYIJ0UiuXE5tbtC0UWMl2+5J5KM1IAEB1YDh0TRK3p7Xug6APol+BuI4c/kPmm+JitpLCikmog6FCHSSJ0RVbl9Kb5Hc60SRk3Bak2eWpTNb7jrlQrlrTj7GcZFnUZYmNH1d2p8FvJ+eukeiU9Ayd6Rdmbg7eQd6s68=
