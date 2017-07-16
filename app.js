@@ -40,12 +40,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use(express.static(__dirname +'/client'));
-// app.use(express.static(__dirname +'/dist'));
-//
-// app.get('/', function(req, res) {
-//   res.sendFile(__dirname+"/client/index.html");
-// });
+app.use(express.static(__dirname +'/client'));
+app.use(express.static(__dirname +'/dist'));
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname+"/client/index.html");
+});
 
 app.use('/', routes);
 
