@@ -14,6 +14,12 @@ const app = express();
 
 const routes = require('./app/routes/index');
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    next();
+});
 
 
 app.use(bodyParser.json());
@@ -34,12 +40,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(express.static(__dirname +'/client'));
-app.use(express.static(__dirname +'/dist'));
-
-app.get('/', function(req, res) {
-  res.sendFile(__dirname+"/client/index.html");
-});
+// app.use(express.static(__dirname +'/client'));
+// app.use(express.static(__dirname +'/dist'));
+//
+// app.get('/', function(req, res) {
+//   res.sendFile(__dirname+"/client/index.html");
+// });
 
 app.use('/', routes);
 

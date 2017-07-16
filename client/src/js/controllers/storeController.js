@@ -1,15 +1,8 @@
 app.controller('storeController',['$scope','storeFactory',function($scope,storeFactory){
 
-  storeFactory.getStores()
-    .then((data)=>{
-    $scope.stores = data;
-  });
+  storeFactory.getStore()
+  .then((data) =>{
 
-  // $scope.storeSlug = (slug) =>{
-  //   storeFactory.getStore(slug)
-  //   .then((data) =>{
-  //     console.log(data);
-  //   })
-  // }
-
+   console.log(data);
+  })
 }]);

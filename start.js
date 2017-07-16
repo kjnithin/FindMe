@@ -15,7 +15,9 @@ mongoose.connection.on('error', (err) => {
 
 
 
-app.set('port', process.env.PORT || 7777);
+app.set('port', process.env.PORT);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });
+
+module.exports =app;

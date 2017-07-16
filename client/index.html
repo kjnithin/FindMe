@@ -8,18 +8,21 @@
   <script src="./lib/angular-aria/angular-aria.min.js"></script>
   <script src="./lib/angular-toastr/angular-toastr.tpls.min.js"></script>
   <script src="./lib/angular-ui-router/angular-ui-router.min.js"></script>
+  <script src="./lib/autocomplete/ng-map.min.js"></script>
+  <script src="./lib/google-maps/angularjs-google-maps.min.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD9ycobB5RiavbXpJBo0Muz2komaqqvGv0"></script>
   <script src="./lib/bootstrap/bootstrap.min.js"></script>
 
 
   <script src="./src/js/app.js"></script>
   <script src="./src/js/services/service.js"></script>
+  <script src="./src/js/controllers/storesController.js"></script>
   <script src="./src/js/controllers/storeController.js"></script>
   <script src="./src/js/controllers/addController.js"></script>
 
 
   <link rel="stylesheet" href="./lib/bootstrap/bootstrap.min.css"/>
   <link rel="stylesheet" href="./lib/angular-toastr/angular-toastr.min.css"/>
-  <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css"/>
   <link rel="stylesheet" type="text/css" href="./src/css/style.css">
 
   <link rel="icon" href="images/icon/doughnut.png" type="image/png" />
@@ -83,9 +86,7 @@
       </div>
     </nav>
   </header>
-  <div class='content' >
-    <div class='inner' ui-view>
-    </div>
+  <div class='content'ui-view >
   </div>
 </body>
 </html>

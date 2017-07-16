@@ -132,7 +132,10 @@ a {
  */
 a:active,
 a:hover {
-  outline-width: 0; }
+  outline-width: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
 
 /**
  * 1. Remove the bottom border in Firefox 39-.

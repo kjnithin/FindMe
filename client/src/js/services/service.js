@@ -17,6 +17,15 @@ app.factory('storeFactory',['$http',function($http){
     })
   };
 
+  storeFactory.createStore = function(store){
+    return $http.post(baseUrl+'/createStore',store)
+    .then((response)=>{
+      return response
+    },(error)=>{
+      return error
+    })
+  };
+
   return storeFactory;
 
 }]);
