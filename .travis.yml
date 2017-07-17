@@ -5,3 +5,10 @@ before_script:
 - npm install
 script:
 - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: Mv6Sy95f6sE8frtmMhPFjv3Zia2F5pZLUIlIukv5c4bi91MQZSN0leOi8pfp8deEw3OfMjEywovcxfPrj79DdvHlqqYN0Ob+A8DVTBYChTvHrCtKoAYN6+D37jEggoiLRKa1AaSIBhDV0UpGu1R5+HI2lUQo37EvwaI0eRpNjhNRQgtdl2z1Npplt7a6gQfDLNd2aYPXP8kM+jYWFREiVt8Wu9Sz+O1w+FFYl2tSH9DDzddqvz/UuoD60enqpN+KSQ4CVEU2/Gbg+snKqAcktJHN2OtQpSsTt93S71VL7LZBoe8Xdi07wRbmvjrnWO7zQ2gl79OrflW9n7GvgRXz1nUE3L+RJVbDLVemAUsRli4HK3QIQG9t9Esfm+MvmJJRiA+JnYO0W8Yf7JTTnI4RTuK528Y02lyv6xadwzSzIKgCrpmii632TvKfrgw+/AYv2cFT6n4vf8w+jiklJrd1z2G5XEIYEMtah+q8SsgTp3RjYNY/KLVQeFL87WGc5Ul4y0wZjVYXuAV1ivk0A9cb7bFXYVsKbgllj42AtZPETTv9uXnAn+yr0H351ho5eEnIOTY5cjREw7bRSL0QD7NNld0x0T1+fukpyLSEYw4JfV4a6eFBvrhAXoghDdXl4GTqxDeGsvAZLZd3SDcNTMYT08bSp+DY0sbC90W8DHoL62A=
+  app: findplaceonline
+  on:
+    repo: kjnithin/FindMe
