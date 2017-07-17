@@ -1,6 +1,6 @@
 app.factory('storeFactory',['$http',function($http){
 
-  const baseUrl = 'https://findplaceonline.herokuapp.com/';
+  const baseUrl = 'https://findplaceonline.herokuapp.com';
   // const baseUrl ='http://localhost:3000';
   const storeFactory = {};
 
@@ -11,12 +11,12 @@ app.factory('storeFactory',['$http',function($http){
     })
   };
 
-  storeFactory.getStore = function(slug){
-    return $http.get(baseUrl+'/store/'+slug)
-    .then((response)=>{
-      return response.data
-    })
-  };
+  // storeFactory.getStore = function(slug){
+  //   return $http.get(baseUrl+'/store/'+slug)
+  //   .then((response)=>{
+  //     return response.data
+  //   })
+  // };
 
   storeFactory.createStore = function(store){
     return $http.post(baseUrl+'/createStore',store)
