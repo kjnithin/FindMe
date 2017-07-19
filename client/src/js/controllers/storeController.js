@@ -1,8 +1,15 @@
-app.controller('storeController',['$scope','storeFactory',function($scope,storeFactory){
+app.controller('storeController',['$scope','storeFactory','$stateParams',function($scope,storeFactory,$stateParams){
 
-  storeFactory.getStore()
-  .then((data) =>{
+ var slug =$stateParams.slug ;
 
-   console.log(data);
-  })
+   storeFactory.getStore(slug)
+   .then((data)=>{
+     $scope.name = data.name;
+     $scope.description = data.description;
+      $scope.location = data.location.address;
+      $scope.lng = data.location.coordinates[0];
+      $scope.lat = data.location.coordinates[1];
+      $scope.tags = data.tags;
+   })
+
 }]);

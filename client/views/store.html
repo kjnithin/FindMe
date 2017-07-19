@@ -1,25 +1,21 @@
-<div class='single' ng-controller="storeController" >
+<div ng-controller='storeController'>
+<div class='single' ng-controller='storeController'>
   <div class='single__hero'>
     <img class='single__image' src='../images/store.png'/>
     <h2 class='title title--single'>
-      <a>{{storeTitle}}</a>
+      <a>{{name}}</a>
     </h2>
   </div>
 </div>
 <div class='single__details inner'>
-  <img class="single__map" src="https://maps.googleapis.com/maps/api/staticmap?center=43.392657,-80.442588&amp;zoom=14&amp;size=800x150&amp;key=AIzaSyD9ycobB5RiavbXpJBo0Muz2komaqqvGv0&amp;markers=43.392657,-80.442588&amp;scale=2"/>
-  <p class='single__location'> location</p>
-  <p>description</p>
-  <ul class="tags">
-    <li class="tag">
-      <a class="tag__link" href="/tags/Open Late"><span class="tag__text">Open Late</span></a>
-    </li>
-    <li class="tag">
-      <a class="tag__link" href="/tags/Family Friendly"><span class="tag__text">Family Friendly</span></a>
-    </li>
-    <li class="tag">
-      <a class="tag__link" href="/tags/Licenced"><span class="tag__text">Licenced</span></a>
+  <img class="single__map" src="https://maps.googleapis.com/maps/api/staticmap?center={{lat}},{{lng}}&amp;zoom=14&amp;size=800x150&amp;key=AIzaSyCb3G9dOYPnJWbAK_P_d4Yt7xW-D7F3Rq4&amp;markers={{lat}},{{lng}}&amp;scale=2"/>
+  <p class='single__location'>{{location}}</p>
+  <p>{{description}}</p>
+  <ul class="tags" >
+    <li class="tag" ng-repeat='tag in tags'>
+      <a class="tag__link" href=""><span class="tag__text">{{tag}}</span></a>
     </li>
   </ul>
+</div>
 </div>
 </div>

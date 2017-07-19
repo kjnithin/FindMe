@@ -1,3 +1,17 @@
-<div class='inner'>
+<div class='inner' ng-controller="loginController">
 <h2>Login</h2>
+<p>{{val.name}}</p>
+<form class="form" action="/login" method="POST">
+  <label for="email">Email </label>
+  <input type="email" name="email">
+  <label for="password">Password </label>
+  <input type="password" name="password">
+  <input class="button" type="submit" value="Log In">
+</form>
+<form class="form" action="/account/forgot" method="POST">
+  <h2>I forgot password!!</h2>
+  <label for="email">Email</label>
+  <input type="email" name="email">
+  <input class="button" type="submit" value="Reset">
+</form>
 </div>

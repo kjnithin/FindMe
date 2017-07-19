@@ -1,16 +1,8 @@
-app.controller('storesController',['$scope','storeFactory',function($scope,storeFactory){
+app.controller('storesController',['$scope','storeFactory','localStorageService','$state',function($scope,storeFactory,localStorageService,$state){
 
   storeFactory.getStores()
     .then((data)=>{
     $scope.stores = data;
   });
-
-  $scope.storeSlug = (slug) =>{
-    storeFactory.getStore(slug)
-    .then((data) =>{
-     $scope.storeTitle=data.name;
-     console.log($scope.storeTitle);
-    })
-  }
 
 }]);

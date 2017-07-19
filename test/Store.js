@@ -21,7 +21,7 @@ describe('Stores', () => {
   describe('/GET Stores', () => {
       it('it should GET all the stores', (done) => {
         chai.request(server)
-            .get('/stores')
+            .get('/api/stores')
             .end((err, res) => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
@@ -47,7 +47,7 @@ describe('Stores', () => {
             }
         }
         chai.request(server)
-            .post('/createStore')
+            .post('/api/createStore')
             .send(store)
             .end((err, res) => {
                 res.should.have.status(200);
@@ -55,6 +55,66 @@ describe('Stores', () => {
                 res.body.should.have.property('success').eql(true);
               done();
             });
+      });
+    });
+
+    /*
+    * Test to get a store by slug
+    */
+
+    describe('/GET/:slug store', () => {
+      it('it should GET a store by the given slug', (done) => {
+        let store = new Store({
+          name: "pizza store",
+          description: "This is pizza store",
+          tags: ['licened','open late'],
+          location:{
+            coordinates:[34,-32],
+            address:'797 doon village road'
+          }
+        });
+        store.save((err, store) => {
+            chai.request(server)
+            .get('/api/store/' +store.slug)
+            .send(store)
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                res.body.should.have.property('name');
+                res.body.should.have.property('description');
+                res.body.should.have.property('tags');
+              done();
+            });
+        });
+      });
+    });
+
+    /    */
+
+    describe('/GET/:id store', () => {
+      it('it should GET a store by the given id', (done) => {
+        let store = new Store({
+          name: "pizza store",
+          description: "This is pizza store",
+          tags: ['licened','open late'],
+          location:{
+            coordinates:[34,-32],
+            address:'797 doon village road'
+          }
+        });
+        store.save((err, store) => {
+            chai.request(server)
+            .get('/api/storebyid/' +store.id)
+            .send(store)
+            .end((err, res) => {
+                res.should.have.status(200);
+                res.body.should.be.a('object');
+                res.body.should.have.property('name');
+                res.body.should.have.property('description');
+                res.body.should.have.property('tags');
+              done();
+            });
+        });
       });
     });
 });

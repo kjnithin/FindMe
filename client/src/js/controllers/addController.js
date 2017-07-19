@@ -18,7 +18,7 @@ app.controller('addController',['$scope','storeFactory','$state','toastr',functi
        tag.push(tagObject[key]);
      }
 
-     $scope.addStoreForm ={
+     const addStoreForm ={
        'name':$scope.addForm.name,
        'description':$scope.addForm.description,
        'tags':tag,
@@ -28,7 +28,7 @@ app.controller('addController',['$scope','storeFactory','$state','toastr',functi
        }
      };
 
-     storeFactory.createStore($scope.addStoreForm)
+     storeFactory.createStore(addStoreForm)
       .then((data)=>{
         if(data.status === 200){
           $state.go('stores')

@@ -36,8 +36,9 @@ const getStores = async(req,res) =>{
   }
 };
 
-const getStore = async(req,res) =>{
+const getStoreBySlug = async(req,res) =>{
   try{
+
     const store = await Store.findOne({slug:req.params.slug});
     res.status(200).json(store);
   }
@@ -51,10 +52,25 @@ const getStore = async(req,res) =>{
   }
 };
 
+const getStoreById = async(req,res) =>{
+  try{
+    const store = await Store.findOne({_id:req.params.id});
+    res.status(200).json(store);
+  }
+  catch(err){
+    res.status(400).json({
+     success:false,
+     message:'Invalid request',
+     error:err
+   });
+   winston.log.error(err);
+  }
+};
+
 const updateStore = async(req,res)=>{
   try{
     const store = await Store.findOneAndUpdate(
-      {id:req.params._id},
+      {_id:req.params.id},
       req.body,
       {
       new: true,
@@ -75,6 +91,7 @@ const updateStore = async(req,res)=>{
 module.exports ={
   createStore : createStore,
   getStores : getStores,
-  getStore : getStore,
+  getStoreBySlug : getStoreBySlug,
+  getStoreById : getStoreById,
   updateStore : updateStore
 }

@@ -2,7 +2,8 @@ var app = angular.module('findMe',[
   'ui.router',
   'toastr',
   'ngMap',
-  'gm'
+  'gm',
+  'LocalStorageModule'
 ]);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -17,8 +18,13 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
       })
 
       .state('store',{
-        url:'/store',
+        url:'/store/:slug',
         templateUrl:'views/store.html'
+      })
+
+      .state('edit',{
+        url:'/edit/:id',
+        templateUrl:'views/edit.html'
       })
 
       .state('tags',{
@@ -34,11 +40,6 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
       .state('add',{
         url:'/add',
         templateUrl:'views/add.html'
-      })
-
-      .state('edit',{
-        url:'/edit',
-        templateUrl:'views/edit.html'
       })
 
       .state('map',{
