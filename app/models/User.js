@@ -7,7 +7,7 @@ const mongodbErrorHandler = require('mongoose-mongodb-errors');
 const passportLocalMongoose = require('passport-local-mongoose');
 
 
-const USerSchema = new Schema({
+const UserSchema = new Schema({
   email:{
     type:String,
     unique:true,
@@ -23,4 +23,7 @@ const USerSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model('User', USerSchema);
+UserSchema.plugin(passportLocalMongoose,{usernameField:'email'});
+UserSchema.plugin(mongodbErrorHandler)
+
+module.exports = mongoose.model('User', UserSchema);

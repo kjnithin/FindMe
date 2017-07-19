@@ -7,7 +7,7 @@ require('./app/handlers/winston');
 const app = require('./app');
 
 // Connect to our Database and handle an bad connections
-mongoose.connect(process.env.DATABASE_DEV);
+mongoose.connect(process.env.DATABASE_PROD);
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
   console.error(`Error: ${err.message}`);
