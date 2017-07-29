@@ -1,32 +1,32 @@
 app.factory('storeFactory',['$http',function($http){
 
-  const baseUrl = 'https://findplaceonline.herokuapp.com/api';
+  const baseUrl = 'https://findplaceonline.herokuapp.com';
   // const baseUrl ='http://localhost:3000/api';
   const storeFactory = {};
 
   storeFactory.getStores = function(){
-    return $http.get(baseUrl+'/stores')
+    return $http.get(baseUrl+'/api/stores')
     .then((response)=>{
       return response.data
     })
   };
 
   storeFactory.getStore = function(slug){
-    return $http.get(baseUrl+'/store/'+slug)
+    return $http.get(baseUrl+'/api/store/'+slug)
     .then((response)=>{
       return response.data
     })
   };
 
   storeFactory.getStoreById = function(id){
-    return $http.get(baseUrl+'/storebyid/'+id)
+    return $http.get(baseUrl+'/api/storebyid/'+id)
     .then((response)=>{
       return response.data
     })
   };
 
   storeFactory.updateStore = function(id,data){
-    return $http.put(baseUrl+'/store/'+id,data)
+    return $http.put(baseUrl+'/api/store/'+id,data)
     .then((response)=>{
       return response
     },(error) =>{
@@ -35,7 +35,7 @@ app.factory('storeFactory',['$http',function($http){
   }
 
   storeFactory.createStore = function(store){
-    return $http.post(baseUrl+'/createStore',store)
+    return $http.post(baseUrl+'/api/createStore',store)
     .then((response)=>{
       return response
     },(error)=>{
@@ -44,7 +44,7 @@ app.factory('storeFactory',['$http',function($http){
   };
 
   storeFactory.getTags = function(){
-    return $http.get(baseUrl+'/tags')
+    return $http.get(baseUrl+'/api/tags')
     .then((response)=>{
       return response.data
     },(error)=>{
@@ -53,7 +53,7 @@ app.factory('storeFactory',['$http',function($http){
   };
 
   storeFactory.getStoreByTag = function(tag){
-    return $http.get(baseUrl+'/tags/'+tag)
+    return $http.get(baseUrl+'/api/tags/'+tag)
     .then((response)=>{
       return response.data
     },(error)=>{
