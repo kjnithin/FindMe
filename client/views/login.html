@@ -1,13 +1,16 @@
 <div class='inner' ng-controller="loginController">
 <h2>Login</h2>
-<p>{{val.name}}</p>
-<form class="form" action="/login" method="POST">
+<form class="form" name='loginForm' ng-submit='loginUser()'>
   <label for="email">Email </label>
-  <input type="email" name="email">
+  <input type="email" ng-model='loginForm.email' required="required" >
   <label for="password">Password </label>
-  <input type="password" name="password">
+  <input type="password" ng-model='loginForm.password' required='required'>
   <input class="button" type="submit" value="Log In">
+  <p class='ortext'>Or</p>
+  <input class="button" type='button' value="Log In with Google" ng-click='signWithGoogle()'>
 </form>
+
+
 <form class="form" action="/account/forgot" method="POST">
   <h2>I forgot password!!</h2>
   <label for="email">Email</label>

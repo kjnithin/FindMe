@@ -1,4 +1,4 @@
-app.controller('addController',['$scope','storeFactory','$state','toastr',function($scope,storeFactory,$state,toastr){
+app.controller('addController',['$scope','storeFactory','$state','toastr','$localStorage','$rootScope','Upload',function($scope,storeFactory,$state,toastr,$localStorage,$rootScope,Upload){
 
   $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
       let location = $scope.addForm.address.getPlace().geometry.location;
@@ -8,10 +8,17 @@ app.controller('addController',['$scope','storeFactory','$state','toastr',functi
       $scope.$apply();
   });
 
+
+  const userData = $localStorage.userdata;
+
+  if(!userData){
+    toastr.error("Please Login");
+    $state.go('login');
+  }
+
   $scope.addForm ={};
 
   $scope.addStore = ()=>{
-
     let tagObject = $scope.addForm.tags;
     let tag = [];
      for(key in tagObject){
@@ -25,7 +32,8 @@ app.controller('addController',['$scope','storeFactory','$state','toastr',functi
        'location':{
          'coordinates':[$scope.addForm.lat,$scope.addForm.lng],
          'address':$scope.addForm.address
-       }
+       },
+       'owner':userData._id
      };
 
      storeFactory.createStore(addStoreForm)

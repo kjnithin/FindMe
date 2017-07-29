@@ -15,25 +15,26 @@
     <input type="text" ng-model="editForm.lat" required="required">
     <ul class="tags">
       <div class="tag tag__choice">
-        <input type="checkbox" ng-model='editForm.wifi'  ng-true-value="'wifi'" ng-checked='checked'>
+        <input type="checkbox" ng-model='editForm.tags.wifi'  ng-value='wifi' ng-true-value="'wifi'" ng-checked='checked'>
         <label for="wifi">wifi</label></div>
       <div class="tag tag__choice">
-        <input type="checkbox" ng-model='editForm.tags.openlate' value='open late' ng-true-value="'Open Late'" ng-checked='checked'>
+        <input type="checkbox" ng-model='editForm.tags.openlate' ng-value='open-late' ng-true-value="'Open Late'" ng-checked='checked'>
         <label for="Open Late">Open Late</label>
       </div>
       <div class="tag tag__choice">
-        <input type="checkbox" ng-model='editForm.tags.family' value='family friendly' ng-true-value="'Family Friendly'" ng-checked='checked'>
+        <input type="checkbox" ng-model='editForm.tags.family' ng-value='family-friendly' ng-true-value="'Family Friendly'" ng-checked='checked'>
         <label for="Family Friendly">Family Friendly</label>
       </div>
       <div class="tag tag__choice">
-        <input type="checkbox" ng-model='editForm.tags.vegatarian' value='vegatarian' ng-true-value="'Vegatarian'" ng-checked='checked'>
+        <input type="checkbox" ng-model='editForm.tags.vegatarian' ng-value='vegatarian' ng-true-value="'Vegatarian'" ng-checked='checked'>
         <label for="Vegatarian">Vegatarian</label>
       </div>
       <div class="tag tag__choice">
-        <input type="checkbox" ng-model='editForm.tags.licenced' value='licenced' ng-true-value="'Licenced'" ng-checked='checked'>
+        <input type="checkbox" ng-model='editForm.tags.licenced' ng-value='licenced' ng-true-value="'Licenced'" ng-checked='checked'>
         <label for="Licenced">Licenced</label>
       </div>
     </ul>
     <input class="button" type="submit" value="save">
+    {{editForm.tag}}
   </form>
 </div>

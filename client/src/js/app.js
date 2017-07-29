@@ -3,7 +3,9 @@ var app = angular.module('findMe',[
   'toastr',
   'ngMap',
   'gm',
-  'LocalStorageModule'
+  'ui.gravatar',
+  'ngStorage',
+  'ngFileUpload'
 ]);
 
 app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -28,7 +30,7 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
       })
 
       .state('tags',{
-        url:'/tags',
+        url:'/tags/:tag',
         templateUrl:'views/tags.html'
       })
 
@@ -49,12 +51,24 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 
       .state('register',{
         url:'/register',
-        templateUrl:'views/register.html'
+        templateUrl:'views/register.html',
+        hideLogoutIcon:true
+      })
+
+      .state('account',{
+        url:'/account',
+        templateUrl:'views/account.html'
+      })
+
+      .state('hearts',{
+        url:'/hearts',
+        templateUrl:'views/hearts.html'
       })
 
       .state('login',{
         url:'/login',
-        templateUrl:'views/login.html'
+        templateUrl:'views/login.html',
+        hideLogoutIcon:true
       })
 
 }]);

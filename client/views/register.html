@@ -1,14 +1,14 @@
-<div class='inner'>
+<div class='inner' ng-controller='registerController'>
   <h2>Register</h2>
-  <form class="form" action="/register" method="POST">
+  <form class="form" name='registerForm' ng-submit="registerUser()">
     <label for="name">Name</label>
-    <input type="text" name="name" required="">
+    <input type="text"  ng-model="registerForm.name" required='required'>
     <label for="email">Email</label>
-    <input type="email" name="email" required="">
+    <input type="email" ng-model="registerForm.email" required='required'>
     <label for="password">Password</label>
-    <input type="password" name="password">
+    <input type="password"  ng-model="registerForm.password" required='required'>
     <label for="password-confirm">Confirm Password</label>
-    <input type="password" name="password-confirm">
+    <input type="password" ng-model="registerForm.passwordConfirm">
     <input class="button" type="submit" value="Register">
   </form>
 </div>

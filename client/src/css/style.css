@@ -741,6 +741,12 @@ label {
     .store {
       width: 100%; } }
 
+    .store:hover{
+      -webkit-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.9);
+      -moz-box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.9);
+       box-shadow: 10px 10px 22px 0px rgba(0,0,0,0.9);
+    }
+
 .store__actions {
   position: relative;
   z-index: 2;
@@ -764,6 +770,7 @@ label {
     fill: white; }
   .store__action--edit a {
     border-bottom: 0; }
+
 
 .store__hero {
   position: relative;
@@ -832,6 +839,7 @@ label {
     padding-left: 10px;
     -webkit-clip-path: polygon(10px 0%, 100% 1%, 100% 100%, 10px 100%, 0% 50%);
             clip-path: polygon(10px 0%, 100% 1%, 100% 100%, 10px 100%, 0% 50%); }
+
     .tag__link--active {
       background: #827cd2; }
       .tag__link--active .tag__text {
@@ -1122,3 +1130,34 @@ pre.error {
   background: white;
   line-height: 3;
   white-space: pre-line; }
+
+  .ortext{
+    text-align: center;
+  }
+
+  .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      margin-bottom: 15px;
+  }
+
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
+.no-pointer-class{
+    cursor: not-allowed;
+    pointer-event:none;
+}
