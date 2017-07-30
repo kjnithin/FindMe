@@ -1,7 +1,7 @@
 app.factory('storeFactory',['$http',function($http){
 
   // const baseUrl = 'https://findplaceonline.herokuapp.com/';
-  const baseUrl ='http://localhost:3000/api';
+  const baseUrl ='http://localhost:3000/';
   const storeFactory = {};
 
   storeFactory.getStores = function(){
