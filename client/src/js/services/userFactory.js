@@ -1,7 +1,7 @@
 app.factory('userFactory',['$http',function($http){
 
-  // const baseUrl = 'https://findplaceonline.herokuapp.com/';
-  const baseUrl ='http://localhost:3000/';
+  const baseUrl = 'https://findplaceonline.herokuapp.com/';
+  // const baseUrl ='http://localhost:3000/';
   const userFactory = {};
 
   userFactory.register = function(user){

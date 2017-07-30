@@ -7,7 +7,7 @@
   },
   "scripts": {
     "prod": "node ./start.js",
-    "start": "nodemon ./start.js",
+    "start": "node ./start.js",
     "test": "mocha ./test/Store.js --timeout 10000"
   },
   "keywords": [],
